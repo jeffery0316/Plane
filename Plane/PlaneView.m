@@ -8,13 +8,7 @@
 
 #import "PlaneView.h"
 
-static CGFloat const planeWidth = 80;
-static CGFloat const planeHeight = 100;
-
 @interface PlaneView ()
-@property (assign, nonatomic) CGFloat posX;
-@property (assign, nonatomic) CGFloat posY;
-
 @property (assign, nonatomic) BOOL isDragging;
 @property (assign, nonatomic) CGFloat oldX;
 @property (assign, nonatomic) CGFloat oldY;
@@ -22,14 +16,11 @@ static CGFloat const planeHeight = 100;
 
 @implementation PlaneView
 
-- (instancetype)initWithPlane:(PLPlane *)plane position:(CGPoint)position {
-    self.posX = position.x - planeWidth / 2;
-    self.posY = position.y - planeHeight - 100;
-    CGRect frame = CGRectMake(self.posX, self.posY, planeWidth, planeHeight);
+- (instancetype)initWithPlane:(PLPlane *)plane {
+    CGRect frame = CGRectMake(plane.position.x, plane.position.y, plane.size.width, plane.size.height);
     
     if(self = [super initWithFrame:frame]){
         self.backgroundColor = [UIColor clearColor];
-
         UIView *view = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil][0];
         view.frame = self.bounds;
         [self addSubview:view];

@@ -10,5 +10,5 @@
 #import "PLMissileInterface.h"
 
 @interface PLNewtonMissile : NSObject <PLMissileInterface>
-
+@property (assign, nonatomic) CGPoint position;
 @end

@@ -17,24 +17,25 @@ static NSString * const kConfigKey = @"kConfig";
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
-        // Restore current user if exist
-        id data = [[NSUserDefaults standardUserDefaults] objectForKey:kConfigKey];
-        if(data) {
-            @try {
-                _config = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-            }
-            @catch (NSException *exception) {
-
-            }
-        }
-
         if(!_config){
-            _config = [[PLConfig alloc] init];;
-            [_config save];
+            _config = [[PLConfig alloc] init];
         }
     });
     
     return _config;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"gameStatus": @"gameStatus",
+             @"missileMax": @"missileMax",
+             @"plane": @"plane"
+    };
+}
+
++ (NSValueTransformer *)planeJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[PLPlane class]];
 }
 
 - (instancetype)init {
@@ -47,16 +48,8 @@ static NSString * const kConfigKey = @"kConfig";
 
 - (void)reset {
     self.gameStatus = PLGameStatusInPreparation;
-}
-
-- (void)save {
-    [self archive];
-}
-
-- (void)archive {
-    NSData *saveSelf = [NSKeyedArchiver archivedDataWithRootObject:self];
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:saveSelf forKey:kConfigKey];
+    self.missileMax = 100;
+    self.plane = [[PLPlane alloc] init];
 }
 
 @end

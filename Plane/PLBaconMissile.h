@@ -10,4 +10,5 @@
 #import "PLMissileInterface.h"
 
 @interface PLBaconMissile : NSObject <PLMissileInterface>
+@property (assign, nonatomic) CGPoint position;
 @end

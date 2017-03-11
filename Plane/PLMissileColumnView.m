@@ -9,7 +9,7 @@
 #import "PLMissileColumnView.h"
 #import "PLMissileInterface.h"
 
-static CGFloat const columnWidth = 60;
+static CGFloat const kColumnWidth = 60;
 
 @interface PLMissileColumnView()
 @property (strong, nonatomic) UIImageView *missileImageView;
@@ -19,7 +19,7 @@ static CGFloat const columnWidth = 60;
 @implementation PLMissileColumnView
 
 - (instancetype)init {
-    CGRect frame = CGRectMake(0, 40, columnWidth, columnWidth);
+    CGRect frame = CGRectMake(0, 40, kColumnWidth, kColumnWidth);
 
     if(self = [super initWithFrame:frame]){
         self.backgroundColor = [UIColor clearColor];

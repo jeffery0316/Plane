@@ -10,5 +10,5 @@
 #import "PLPlane.h"
 
 @interface PlaneView : UIView
-- (instancetype)initWithPlane:(PLPlane *)plane position:(CGPoint)position;
+- (instancetype)initWithPlane:(PLPlane *)plane;
 @end

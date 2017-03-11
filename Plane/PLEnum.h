@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PLBaconMissile.h"
+#import "PLNewtonMissile.h"
+#import "PLDavincciMissile.h"
 
 typedef NS_OPTIONS(NSUInteger, PLGameStatus) {
     PLGameStatusInPreparation       = 0,        // In Preparation

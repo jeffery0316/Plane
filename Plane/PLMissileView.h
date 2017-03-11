@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLMissileInterface.h"
 
-@interface PLMissileView : UIView
-
+@interface PLMissileView : UIView 
+- (void)addAnimation;
+- (void)configureWithMissile:(id <PLMissileInterface>)missile;
 @end

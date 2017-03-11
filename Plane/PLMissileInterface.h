@@ -8,10 +8,14 @@
 
 #ifndef PLMissileInterface_h
 #define PLMissileInterface_h
+
+@import UIKit;
 @protocol PLMissileInterface <NSObject>
 - (NSInteger)powerCost;
 - (NSString *)missileName;
+- (NSString *)imageName;
 - (NSInteger)speed;
+- (CGPoint)originPosition;
 @end
 
 

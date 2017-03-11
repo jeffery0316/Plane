@@ -10,6 +10,15 @@
 
 @implementation PLDavincciMissile
 
+- (instancetype)initWithPosition:(CGPoint)position
+{
+    if (self = [super init]) {
+        self.position = position;
+    }
+
+    return self;
+}
+
 - (NSInteger)powerCost
 {
     return 1;
@@ -20,8 +29,18 @@
     return @"Davincci";
 }
 
+- (NSString *)imageName
+{
+    return @"missile1";
+}
+
 - (NSInteger)speed {
     return 40.f;
+}
+
+- (CGPoint)originPosition
+{
+    return self.position;
 }
 
 @end
