@@ -29,6 +29,7 @@
 		EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */; };
 		EAF601F31E746B0C00D4A85F /* PLNewtonMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */; };
 		EAF601F61E7471C300D4A85F /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF601F51E7471C300D4A85F /* Mantle.framework */; };
+		EAF601F81E7482CC00D4A85F /* PLMissileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601F71E7482CC00D4A85F /* PLMissileView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		EAF601F11E746B0C00D4A85F /* PLNewtonMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLNewtonMissile.h; sourceTree = "<group>"; };
 		EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLNewtonMissile.m; sourceTree = "<group>"; };
 		EAF601F51E7471C300D4A85F /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
+		EAF601F71E7482CC00D4A85F /* PLMissileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMissileView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				EAF601D41E74444A00D4A85F /* PlaneView.xib */,
 				EAF601DF1E7455DD00D4A85F /* PLMissileView.h */,
 				EAF601E01E7455DD00D4A85F /* PLMissileView.m */,
+				EAF601F71E7482CC00D4A85F /* PLMissileView.xib */,
 				EAF601E21E74566900D4A85F /* PLMissileColumnView.h */,
 				EAF601E31E74566900D4A85F /* PLMissileColumnView.m */,
 				EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */,
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF601D51E74444A00D4A85F /* PlaneView.xib in Resources */,
+				EAF601F81E7482CC00D4A85F /* PLMissileView.xib in Resources */,
 				EADC70961E743C2900A5A318 /* LaunchScreen.storyboard in Resources */,
 				EAF601CC1E74409000D4A85F /* PLBoardViewController.xib in Resources */,
 				EAF601E61E74568E00D4A85F /* PLMissileColumnView.xib in Resources */,

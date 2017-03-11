@@ -28,7 +28,7 @@ static NSString * const kConfigKey = @"kConfig";
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"gameStatus": @"gameStatus",
-             @"missileMax": @"missileMax",
+             @"score": @"score",
              @"plane": @"plane"
     };
 }
@@ -48,7 +48,7 @@ static NSString * const kConfigKey = @"kConfig";
 
 - (void)reset {
     self.gameStatus = PLGameStatusInPreparation;
-    self.missileMax = 100;
+    self.score = 100;
     self.plane = [[PLPlane alloc] init];
 }
 

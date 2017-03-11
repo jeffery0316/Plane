@@ -21,3 +21,4 @@ test-reports
 test.log
 *.idea
 *.mobileprovision
+xcuserdata

@@ -10,12 +10,14 @@
 #define PLMissileInterface_h
 
 @import UIKit;
+#import "PLEnum.h"
+
 @protocol PLMissileInterface <NSObject>
 - (NSInteger)powerCost;
 - (NSString *)missileName;
 - (NSString *)imageName;
 - (NSInteger)speed;
-- (CGPoint)originPosition;
+- (PLMissileType)type;
 @end
 
 

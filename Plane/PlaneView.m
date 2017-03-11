@@ -58,5 +58,9 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     self.isDragging = NO;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(planeView:didUpdatePosition:)]) {
+        [self.delegate planeView:self didUpdatePosition:self.frame.origin];
+    }
 }
+
 @end

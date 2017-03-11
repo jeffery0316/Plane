@@ -7,9 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PLBaconMissile.h"
-#import "PLNewtonMissile.h"
-#import "PLDavincciMissile.h"
 
 typedef NS_OPTIONS(NSUInteger, PLGameStatus) {
     PLGameStatusInPreparation       = 0,        // In Preparation
@@ -24,4 +21,5 @@ typedef NS_ENUM(NSInteger, PLMissileType) {
 
 @interface PLEnum : NSObject
 + (NSString *)PLMissileTypeToStringWithMissileType:(PLMissileType)type;
++ (NSString *)PLMissileFileTypeToStringWithMissileType:(PLMissileType)type;
 @end

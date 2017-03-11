@@ -8,6 +8,8 @@
 
 #import "PLGameViewController.h"
 
+#import "PLMissileInterface.h"
+
 // view
 #import "PlaneView.h"
 #import "PLMissileView.h"
@@ -20,7 +22,7 @@
 // setting
 #import "PLConfig.h"
 
-@interface PLGameViewController ()
+@interface PLGameViewController () <PlanViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *prepareView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) UIButton *fireButton;
@@ -70,6 +72,7 @@
         PLMissileColumnView *columnView = [[PLMissileColumnView alloc] init];
         [columnView configureWithMissileType:type position:position];
         [columnView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectMissileAction:)]];
+        columnView.tag = idx;
         [self.view addSubview:columnView];
         posX = posX + 55;
     }
@@ -84,6 +87,7 @@
     PLPlane *plane = [[PLPlane alloc] initWithPosition:CGPointMake(defaultPlaneX, defaultPlaneY)];
     [PLConfig sharedConfig].plane = plane;
     PlaneView *planeView = [[PlaneView alloc] initWithPlane:plane];
+    planeView.delegate = self;
     [self.view addSubview:planeView];
 }
 
@@ -104,26 +108,49 @@
     [self initGame];
 }
 
-- (void)selectMissileAction:(UIButton *)button
+- (void)selectMissileAction:(UITapGestureRecognizer *)gesture
 {
+    // TODO: refactor
     // change missile
-    
+    switch (gesture.view.tag) {
+        case 1: {
+            [PLConfig sharedConfig].plane.missile = [[PLDavincciMissile alloc] init];
+            break;
+        }
+        case 2: {
+            [PLConfig sharedConfig].plane.missile = [[PLBaconMissile alloc] init];
+            break;
+        }
+        case 3: {
+            [PLConfig sharedConfig].plane.missile = [[PLNewtonMissile alloc] init];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void)fireAction:(UIButton *)button
 {
     // cost the power
+    if (([PLConfig sharedConfig].score - [PLConfig sharedConfig].plane.missile.powerCost) < 0) {
+        return;
+    }
+
+    [PLConfig sharedConfig].score = [PLConfig sharedConfig].score - [PLConfig sharedConfig].plane.missile.powerCost;
+    NSLog(@"rest count: %ld", (long)[PLConfig sharedConfig].score);
 
     // move missile
-    
     PLMissileView *missileView = [[PLMissileView alloc] init];
+    id <PLMissileInterface> missile = [PLConfig sharedConfig].plane.missile;
     [missileView configureWithMissile:missile];
+    [self.view addSubview:missileView];
     [missileView addAnimation];
-    
-    UIImageView *missile = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"missile1"]];
-    missile.frame = CGRectMake([PLConfig sharedConfig].plane.position.x, [PLConfig sharedConfig].plane.position.y, 18, 40);
-    missile.center = [PLConfig sharedConfig].plane.position;
-    [self.view addSubview:missile];
+}
+
+- (void)planeView:(PlaneView *)plaveView didUpdatePosition:(CGPoint)position
+{
+    [PLConfig sharedConfig].plane.position = position;
 }
 
 @end

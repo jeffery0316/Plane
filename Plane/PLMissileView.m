@@ -7,6 +7,8 @@
 //
 
 #import "PLMissileView.h"
+#import "PLEnum.h"
+#import "PLConfig.h"
 
 static NSString * const kAnimationRemoveLayerKey = @"animationRemoveLayer";
 static CGFloat const kMissileWidth = 18;
@@ -49,17 +51,21 @@ static CGFloat const kMissileHeight = 40;
 
 - (void)configureWithMissile:(id <PLMissileInterface>)missile
 {
-    
+    CGRect frame = CGRectMake([PLConfig sharedConfig].plane.position.x, [PLConfig sharedConfig].plane.position.y, kMissileWidth, kMissileHeight);
+    self.frame = frame;
+    NSString *imageName = [PLEnum PLMissileFileTypeToStringWithMissileType:missile.type];
+    self.missileImageView.image = [UIImage imageNamed:imageName];
+    self.missileImageView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)animationDidStop:(CAAnimation *)anim
                 finished:(BOOL)flag
 {
-    CALayer *lay = [self valueForKey:kAnimationRemoveLayerKey];
-    if(lay){
-        [lay removeAllAnimations];
-        [lay removeFromSuperlayer];
-    }
+//    CALayer *lay = [self valueForKey:kAnimationRemoveLayerKey];
+//    if(lay){
+//        [lay removeAllAnimations];
+//        [lay removeFromSuperlayer];
+//    }
 }
 
 @end

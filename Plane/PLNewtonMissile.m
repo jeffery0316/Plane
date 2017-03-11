@@ -10,10 +10,10 @@
 
 @implementation PLNewtonMissile
 
-- (instancetype)initWithPosition:(CGPoint)position
+- (instancetype)init
 {
     if (self = [super init]) {
-        self.position = position;
+        self.type = PLMissileTypeNewton;
     }
 
     return self;
@@ -38,8 +38,9 @@
     return 90.f;
 }
 
-- (CGPoint)originPosition
+- (PLMissileType)type
 {
-    return self.position;
+    return _type;
 }
+
 @end

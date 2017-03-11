@@ -19,4 +19,14 @@
     return @"";
 }
 
++ (NSString *)PLMissileFileTypeToStringWithMissileType:(PLMissileType)type
+{
+    switch (type) {
+        case PLMissileTypeDavincci: return @"missile1";
+        case PLMissileTypeBacon: return @"missile2";
+        case PLMissileTypeNewton: return @"missile3";
+    }
+    return @"";
+}
+
 @end

@@ -10,10 +10,10 @@
 
 @implementation PLDavincciMissile
 
-- (instancetype)initWithPosition:(CGPoint)position
+- (instancetype)init
 {
     if (self = [super init]) {
-        self.position = position;
+        self.type = PLMissileTypeDavincci;
     }
 
     return self;
@@ -38,9 +38,9 @@
     return 40.f;
 }
 
-- (CGPoint)originPosition
+- (PLMissileType)type
 {
-    return self.position;
+    return _type;
 }
 
 @end

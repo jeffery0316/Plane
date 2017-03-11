@@ -11,6 +11,9 @@
 #import <Foundation/Foundation.h>
 #import "PLConfig.h"
 #import "PLMissileInterface.h"
+#import "PLDavincciMissile.h"
+#import "PLBaconMissile.h"
+#import "PLNewtonMissile.h"
 
 @interface PLPlane : NSObject
 @property (assign, nonatomic) NSInteger missileAmount;

@@ -15,7 +15,7 @@
 
 @interface PLConfig : MTLModel <MTLJSONSerializing>
 @property (assign, nonatomic) PLGameStatus gameStatus;
-@property (assign, nonatomic) NSInteger missileMax;
+@property (assign, nonatomic) NSInteger score;
 @property (strong, nonatomic) PLPlane *plane;
 
 + (instancetype)sharedConfig;

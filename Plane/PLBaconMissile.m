@@ -10,10 +10,10 @@
 
 @implementation PLBaconMissile
 
-- (instancetype)initWithPosition:(CGPoint)position
+- (instancetype)init
 {
     if (self = [super init]) {
-        self.position = position;
+        self.type = PLMissileTypeBacon;
     }
 
     return self;
@@ -39,9 +39,9 @@
     return 75.f;
 }
 
-- (CGPoint)originPosition
+- (PLMissileType)type
 {
-    return self.position;
+    return _type;
 }
 
 @end

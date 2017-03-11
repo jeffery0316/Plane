@@ -38,7 +38,7 @@ static CGFloat const kColumnWidth = 60;
 }
 
 - (void)configureWithMissileType:(PLMissileType)type position:(CGPoint)position {
-    CGRect frame = CGRectMake(position.x, position.y, columnWidth, columnWidth);
+    CGRect frame = CGRectMake(position.x, position.y, kColumnWidth, kColumnWidth);
     self.frame = frame;
     NSString *imageName = [PLEnum PLMissileTypeToStringWithMissileType:type];
     self.missileImageView.image = [UIImage imageNamed:imageName];
