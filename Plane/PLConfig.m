@@ -9,6 +9,7 @@
 #import "PLConfig.h"
 static NSString * const kPlaneKey = @"kPlane";
 static NSString * const kConfigKey = @"kConfig";
+NSString * const PLScoreChangedNotification = @"kPLScoreChangedNotification";
 
 @implementation PLConfig
 
@@ -44,7 +45,6 @@ static NSString * const kConfigKey = @"kConfig";
     }
     return self;
 }
-
 
 - (void)reset {
     self.gameStatus = PLGameStatusInPreparation;

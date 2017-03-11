@@ -13,7 +13,7 @@
 // view
 #import "PlaneView.h"
 #import "PLMissileView.h"
-#import "PLMissileColumnView.h"
+#import "PLMissileColumnButton.h"
 
 // model
 #import "PLPlane.h"
@@ -26,9 +26,14 @@
 @property (weak, nonatomic) IBOutlet UIView *prepareView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) UIButton *fireButton;
+@property (strong, nonatomic) UILabel *counter;
 @end
 
 @implementation PLGameViewController
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,13 +49,13 @@
 #pragma mark - Setup methods
 - (void)_setupGame {
     [self.startButton addTarget:self action:@selector(startAction:) forControlEvents:UIControlEventTouchUpInside];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scoreChangedAction:) name:PLScoreChangedNotification object:nil];
 //    [PLConfig sharedConfig] observeValueForKeyPath:@"" ofObject:<#(nullable id)#> change:<#(nullable NSDictionary<NSKeyValueChangeKey,id> *)#> context:<#(nullable void *)#>
 }
 
 - (void)initGame {
     [self initMap];
     [self initPlane];
-    [self initMissile];
 }
 
 - (void)initMap {
@@ -69,16 +74,28 @@
     for (NSInteger idx = missiles.count - 1; idx >= 0; idx --) {
         CGPoint position = CGPointMake([UIScreen mainScreen].bounds.size.width - posX, 40);
         PLMissileType type = [missiles[idx] integerValue];
-        PLMissileColumnView *columnView = [[PLMissileColumnView alloc] init];
-        [columnView configureWithMissileType:type position:position];
-        [columnView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectMissileAction:)]];
-        columnView.tag = type;
-        [self.view addSubview:columnView];
+        PLMissileColumnButton *columnButton = [[PLMissileColumnButton alloc] init];
+        [columnButton configureWithMissileType:type position:position];
+        [columnButton addTarget:self action:@selector(selectMissileAction:) forControlEvents:UIControlEventTouchUpInside];
+        columnButton.tag = type;
+        [self.view addSubview:columnButton];
         posX = posX + 55;
     }
 
     // add bullet count view
-    //    UILabel *bulletLabel = [UILabel alloc] initWithFrame:
+    CGRect boardFrame = CGRectMake(20, 40, 120, 40);
+    UILabel *bulletLabel = [[UILabel alloc] initWithFrame:boardFrame];
+    bulletLabel.textColor = [UIColor whiteColor];
+    bulletLabel.text = @"Bullet Count";
+    [self.view addSubview:bulletLabel];
+
+    // counter
+    CGRect counterFrame = CGRectMake(20, 70, 80, 40);
+    self.counter = [[UILabel alloc] initWithFrame:counterFrame];
+    self.counter.text = [NSString stringWithFormat:@"%ld", (long)[PLConfig sharedConfig].score];
+    self.counter.textColor = [UIColor whiteColor];
+    self.counter.font = [UIFont fontWithName:@"System" size:20.f];
+    [self.view addSubview:self.counter];
 }
 
 - (void)initPlane {
@@ -89,10 +106,6 @@
     PlaneView *planeView = [[PlaneView alloc] initWithPlane:plane];
     planeView.delegate = self;
     [self.view addSubview:planeView];
-}
-
-- (void)initMissile {
-
 }
 
 #pragma mark - Action methods
@@ -108,11 +121,11 @@
     [self initGame];
 }
 
-- (void)selectMissileAction:(UITapGestureRecognizer *)gesture
+- (void)selectMissileAction:(UIButton *)button
 {
-    // TODO: refactor
+    // TODO: refactor and abstract this part as a PLMissileManager
     // change missile
-    switch (gesture.view.tag) {
+    switch (button.tag) {
         case PLMissileTypeDavincci: {
             [PLConfig sharedConfig].plane.missile = [[PLDavincciMissile alloc] init];
             break;
@@ -138,7 +151,7 @@
     }
 
     [PLConfig sharedConfig].score = [PLConfig sharedConfig].score - [PLConfig sharedConfig].plane.missile.powerCost;
-    NSLog(@"rest count: %ld", (long)[PLConfig sharedConfig].score);
+    [[NSNotificationCenter defaultCenter] postNotificationName:PLScoreChangedNotification object:nil];
 
     // move missile
     PLMissileView *missileView = [[PLMissileView alloc] init];
@@ -148,6 +161,12 @@
     [missileView addAnimation];
 }
 
+- (void)scoreChangedAction:(id)action
+{
+    self.counter.text = [NSString stringWithFormat:@"%ld", (long)[PLConfig sharedConfig].score];
+}
+
+#pragma mark - PlanViewDelegate methods
 - (void)planeView:(PlaneView *)plaveView didUpdatePosition:(CGPoint)position
 {
     [PLConfig sharedConfig].plane.position = position;

@@ -6,18 +6,17 @@
 //  Copyright © 2017年 bike. All rights reserved.
 //
 
-#import "PLMissileColumnView.h"
+#import "PLMissileColumnButton.h"
 #import "PLMissileInterface.h"
 
 static CGFloat const kColumnWidth = 60;
 
-@interface PLMissileColumnView()
+@interface PLMissileColumnButton()
 @property (strong, nonatomic) UIImageView *missileImageView;
 @property (assign, nonatomic) PLMissileType missileType;
-//@property (strong, nonatomic) UIView *innerView;
 @end
 
-@implementation PLMissileColumnView
+@implementation PLMissileColumnButton
 
 - (instancetype)init {
     CGRect frame = CGRectMake(0, 0, kColumnWidth, kColumnWidth);
@@ -38,7 +37,7 @@ static CGFloat const kColumnWidth = 60;
 - (void)configureWithMissileType:(PLMissileType)type position:(CGPoint)position {
     CGRect frame = CGRectMake(position.x, position.y, kColumnWidth, kColumnWidth);
     self.frame = frame;
-    
+
     NSString *imageName = [PLEnum PLMissileTypeToStringWithMissileType:type];
     self.missileImageView.image = [UIImage imageNamed:imageName];
     self.missileImageView.backgroundColor = [UIColor clearColor];
@@ -48,8 +47,8 @@ static CGFloat const kColumnWidth = 60;
     [super touchesBegan:touches withEvent:event];
 
     // trigger missile selection
-    if (self.delegate && [self.delegate respondsToSelector:@selector(missileColumnView:didSelectMissileType:)]) {
-        [self.delegate missileColumnView:self didSelectMissileType:self.missileType];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(missileColumnButton:didSelectMissileType:)]) {
+        [self.delegate missileColumnButton:self didSelectMissileType:self.missileType];
     }
 }
 

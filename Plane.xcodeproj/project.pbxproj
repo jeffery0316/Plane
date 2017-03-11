@@ -22,8 +22,8 @@
 		EAF601D91E74478500D4A85F /* PLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601D81E74478500D4A85F /* PLConfig.m */; };
 		EAF601DC1E74488E00D4A85F /* PLPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601DB1E74488E00D4A85F /* PLPlane.m */; };
 		EAF601E11E7455DD00D4A85F /* PLMissileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E01E7455DD00D4A85F /* PLMissileView.m */; };
-		EAF601E41E74566900D4A85F /* PLMissileColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E31E74566900D4A85F /* PLMissileColumnView.m */; };
-		EAF601E61E74568E00D4A85F /* PLMissileColumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */; };
+		EAF601E41E74566900D4A85F /* PLMissileColumnButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E31E74566900D4A85F /* PLMissileColumnButton.m */; };
+		EAF601E61E74568E00D4A85F /* PLMissileColumnButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601E51E74568E00D4A85F /* PLMissileColumnButton.xib */; };
 		EAF601E91E7458B500D4A85F /* PLEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E81E7458B500D4A85F /* PLEnum.m */; };
 		EAF601EC1E745D2400D4A85F /* PLDavincciMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EB1E745D2400D4A85F /* PLDavincciMissile.m */; };
 		EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */; };
@@ -70,9 +70,9 @@
 		EAF601DB1E74488E00D4A85F /* PLPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlane.m; sourceTree = "<group>"; };
 		EAF601DF1E7455DD00D4A85F /* PLMissileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileView.h; sourceTree = "<group>"; };
 		EAF601E01E7455DD00D4A85F /* PLMissileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileView.m; sourceTree = "<group>"; };
-		EAF601E21E74566900D4A85F /* PLMissileColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileColumnView.h; sourceTree = "<group>"; };
-		EAF601E31E74566900D4A85F /* PLMissileColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileColumnView.m; sourceTree = "<group>"; };
-		EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMissileColumnView.xib; sourceTree = "<group>"; };
+		EAF601E21E74566900D4A85F /* PLMissileColumnButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileColumnButton.h; sourceTree = "<group>"; };
+		EAF601E31E74566900D4A85F /* PLMissileColumnButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileColumnButton.m; sourceTree = "<group>"; };
+		EAF601E51E74568E00D4A85F /* PLMissileColumnButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMissileColumnButton.xib; sourceTree = "<group>"; };
 		EAF601E71E7458B500D4A85F /* PLEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLEnum.h; sourceTree = "<group>"; };
 		EAF601E81E7458B500D4A85F /* PLEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLEnum.m; sourceTree = "<group>"; };
 		EAF601EA1E745D2400D4A85F /* PLDavincciMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDavincciMissile.h; sourceTree = "<group>"; };
@@ -225,9 +225,9 @@
 				EAF601DF1E7455DD00D4A85F /* PLMissileView.h */,
 				EAF601E01E7455DD00D4A85F /* PLMissileView.m */,
 				EAF601F71E7482CC00D4A85F /* PLMissileView.xib */,
-				EAF601E21E74566900D4A85F /* PLMissileColumnView.h */,
-				EAF601E31E74566900D4A85F /* PLMissileColumnView.m */,
-				EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */,
+				EAF601E21E74566900D4A85F /* PLMissileColumnButton.h */,
+				EAF601E31E74566900D4A85F /* PLMissileColumnButton.m */,
+				EAF601E51E74568E00D4A85F /* PLMissileColumnButton.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 				EAF601F81E7482CC00D4A85F /* PLMissileView.xib in Resources */,
 				EADC70961E743C2900A5A318 /* LaunchScreen.storyboard in Resources */,
 				EAF601CC1E74409000D4A85F /* PLBoardViewController.xib in Resources */,
-				EAF601E61E74568E00D4A85F /* PLMissileColumnView.xib in Resources */,
+				EAF601E61E74568E00D4A85F /* PLMissileColumnButton.xib in Resources */,
 				EADC70931E743C2900A5A318 /* Assets.xcassets in Resources */,
 				EADC70911E743C2900A5A318 /* Main.storyboard in Resources */,
 			);
@@ -348,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF601DC1E74488E00D4A85F /* PLPlane.m in Sources */,
-				EAF601E41E74566900D4A85F /* PLMissileColumnView.m in Sources */,
+				EAF601E41E74566900D4A85F /* PLMissileColumnButton.m in Sources */,
 				EAF601E11E7455DD00D4A85F /* PLMissileView.m in Sources */,
 				EAF601F31E746B0C00D4A85F /* PLNewtonMissile.m in Sources */,
 				EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */,

@@ -13,6 +13,8 @@
 #import "PLEnum.h"
 #import "PLPlane.h"
 
+extern NSString * const PLScoreChangedNotification;
+
 @interface PLConfig : MTLModel <MTLJSONSerializing>
 @property (assign, nonatomic) PLGameStatus gameStatus;
 @property (assign, nonatomic) NSInteger score;
