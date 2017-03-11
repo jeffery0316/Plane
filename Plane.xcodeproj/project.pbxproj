@@ -81,6 +81,7 @@
 		EADC70851E743C2900A5A318 /* Plane */ = {
 			isa = PBXGroup;
 			children = (
+				EADC70AB1E743DBD00A5A318 /* missile */,
 				EADC70891E743C2900A5A318 /* AppDelegate.h */,
 				EADC708A1E743C2900A5A318 /* AppDelegate.m */,
 				EADC708C1E743C2900A5A318 /* ViewController.h */,
@@ -109,6 +110,13 @@
 				EADC70A21E743C2A00A5A318 /* Info.plist */,
 			);
 			path = PlaneTests;
+			sourceTree = "<group>";
+		};
+		EADC70AB1E743DBD00A5A318 /* missile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = missile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Plane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bike.Plane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Plane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bike.Plane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
