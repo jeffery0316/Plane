@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PLGameViewController.h
 //  Plane
 //
 //  Created by jefferykao on 2017/3/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PLGameViewController : UIViewController
 
 
 @end

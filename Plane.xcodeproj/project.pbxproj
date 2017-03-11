@@ -9,11 +9,24 @@
 /* Begin PBXBuildFile section */
 		EADC70881E743C2900A5A318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC70871E743C2900A5A318 /* main.m */; };
 		EADC708B1E743C2900A5A318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC708A1E743C2900A5A318 /* AppDelegate.m */; };
-		EADC708E1E743C2900A5A318 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC708D1E743C2900A5A318 /* ViewController.m */; };
+		EADC708E1E743C2900A5A318 /* PLGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC708D1E743C2900A5A318 /* PLGameViewController.m */; };
 		EADC70911E743C2900A5A318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADC708F1E743C2900A5A318 /* Main.storyboard */; };
 		EADC70931E743C2900A5A318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADC70921E743C2900A5A318 /* Assets.xcassets */; };
 		EADC70961E743C2900A5A318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADC70941E743C2900A5A318 /* LaunchScreen.storyboard */; };
 		EADC70A11E743C2A00A5A318 /* PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC70A01E743C2A00A5A318 /* PlaneTests.m */; };
+		EAF601CB1E74409000D4A85F /* PLBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601C91E74409000D4A85F /* PLBoardViewController.m */; };
+		EAF601CC1E74409000D4A85F /* PLBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601CA1E74409000D4A85F /* PLBoardViewController.xib */; };
+		EAF601CF1E74414300D4A85F /* PlaneView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601CE1E74414300D4A85F /* PlaneView.m */; };
+		EAF601D31E74419D00D4A85F /* PLBaconMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601D21E74419D00D4A85F /* PLBaconMissile.m */; };
+		EAF601D51E74444A00D4A85F /* PlaneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601D41E74444A00D4A85F /* PlaneView.xib */; };
+		EAF601D91E74478500D4A85F /* PLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601D81E74478500D4A85F /* PLConfig.m */; };
+		EAF601DC1E74488E00D4A85F /* PLPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601DB1E74488E00D4A85F /* PLPlane.m */; };
+		EAF601E11E7455DD00D4A85F /* PLMissileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E01E7455DD00D4A85F /* PLMissileView.m */; };
+		EAF601E41E74566900D4A85F /* PLMissileColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E31E74566900D4A85F /* PLMissileColumnView.m */; };
+		EAF601E61E74568E00D4A85F /* PLMissileColumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */; };
+		EAF601E91E7458B500D4A85F /* PLEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E81E7458B500D4A85F /* PLEnum.m */; };
+		EAF601EC1E745D2400D4A85F /* PLDavincciMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EB1E745D2400D4A85F /* PLDavincciMissile.m */; };
+		EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +44,8 @@
 		EADC70871E743C2900A5A318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EADC70891E743C2900A5A318 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EADC708A1E743C2900A5A318 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EADC708C1E743C2900A5A318 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EADC708D1E743C2900A5A318 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EADC708C1E743C2900A5A318 /* PLGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLGameViewController.h; sourceTree = "<group>"; };
+		EADC708D1E743C2900A5A318 /* PLGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLGameViewController.m; sourceTree = "<group>"; };
 		EADC70901E743C2900A5A318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EADC70921E743C2900A5A318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EADC70951E743C2900A5A318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +53,30 @@
 		EADC709C1E743C2A00A5A318 /* PlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADC70A01E743C2A00A5A318 /* PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaneTests.m; sourceTree = "<group>"; };
 		EADC70A21E743C2A00A5A318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF601C81E74409000D4A85F /* PLBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBoardViewController.h; sourceTree = "<group>"; };
+		EAF601C91E74409000D4A85F /* PLBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBoardViewController.m; sourceTree = "<group>"; };
+		EAF601CA1E74409000D4A85F /* PLBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBoardViewController.xib; sourceTree = "<group>"; };
+		EAF601CD1E74414300D4A85F /* PlaneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneView.h; sourceTree = "<group>"; };
+		EAF601CE1E74414300D4A85F /* PlaneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneView.m; sourceTree = "<group>"; };
+		EAF601D11E74419D00D4A85F /* PLBaconMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaconMissile.h; sourceTree = "<group>"; };
+		EAF601D21E74419D00D4A85F /* PLBaconMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaconMissile.m; sourceTree = "<group>"; };
+		EAF601D41E74444A00D4A85F /* PlaneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaneView.xib; sourceTree = "<group>"; };
+		EAF601D71E74478500D4A85F /* PLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLConfig.h; sourceTree = "<group>"; };
+		EAF601D81E74478500D4A85F /* PLConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLConfig.m; sourceTree = "<group>"; };
+		EAF601DA1E74488E00D4A85F /* PLPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlane.h; sourceTree = "<group>"; };
+		EAF601DB1E74488E00D4A85F /* PLPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlane.m; sourceTree = "<group>"; };
+		EAF601DF1E7455DD00D4A85F /* PLMissileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileView.h; sourceTree = "<group>"; };
+		EAF601E01E7455DD00D4A85F /* PLMissileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileView.m; sourceTree = "<group>"; };
+		EAF601E21E74566900D4A85F /* PLMissileColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileColumnView.h; sourceTree = "<group>"; };
+		EAF601E31E74566900D4A85F /* PLMissileColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileColumnView.m; sourceTree = "<group>"; };
+		EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMissileColumnView.xib; sourceTree = "<group>"; };
+		EAF601E71E7458B500D4A85F /* PLEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLEnum.h; sourceTree = "<group>"; };
+		EAF601E81E7458B500D4A85F /* PLEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLEnum.m; sourceTree = "<group>"; };
+		EAF601EA1E745D2400D4A85F /* PLDavincciMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDavincciMissile.h; sourceTree = "<group>"; };
+		EAF601EB1E745D2400D4A85F /* PLDavincciMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDavincciMissile.m; sourceTree = "<group>"; };
+		EAF601ED1E745D5C00D4A85F /* PLMissileInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLMissileInterface.h; sourceTree = "<group>"; };
+		EAF601EE1E745E3B00D4A85F /* PLMissileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileManager.h; sourceTree = "<group>"; };
+		EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +118,14 @@
 		EADC70851E743C2900A5A318 /* Plane */ = {
 			isa = PBXGroup;
 			children = (
-				EADC70AB1E743DBD00A5A318 /* missile */,
+				EAF601DE1E744A9E00D4A85F /* View */,
+				EAF601DD1E744A8700D4A85F /* Model */,
+				EAF601D61E7444AB00D4A85F /* Config */,
+				EAF601C71E74406200D4A85F /* board */,
 				EADC70891E743C2900A5A318 /* AppDelegate.h */,
 				EADC708A1E743C2900A5A318 /* AppDelegate.m */,
-				EADC708C1E743C2900A5A318 /* ViewController.h */,
-				EADC708D1E743C2900A5A318 /* ViewController.m */,
+				EADC708C1E743C2900A5A318 /* PLGameViewController.h */,
+				EADC708D1E743C2900A5A318 /* PLGameViewController.m */,
 				EADC708F1E743C2900A5A318 /* Main.storyboard */,
 				EADC70921E743C2900A5A318 /* Assets.xcassets */,
 				EADC70941E743C2900A5A318 /* LaunchScreen.storyboard */,
@@ -115,8 +155,69 @@
 		EADC70AB1E743DBD00A5A318 /* missile */ = {
 			isa = PBXGroup;
 			children = (
+				EAF601ED1E745D5C00D4A85F /* PLMissileInterface.h */,
+				EAF601D11E74419D00D4A85F /* PLBaconMissile.h */,
+				EAF601D21E74419D00D4A85F /* PLBaconMissile.m */,
+				EAF601EA1E745D2400D4A85F /* PLDavincciMissile.h */,
+				EAF601EB1E745D2400D4A85F /* PLDavincciMissile.m */,
 			);
 			name = missile;
+			sourceTree = "<group>";
+		};
+		EAF601C71E74406200D4A85F /* board */ = {
+			isa = PBXGroup;
+			children = (
+				EAF601C81E74409000D4A85F /* PLBoardViewController.h */,
+				EAF601C91E74409000D4A85F /* PLBoardViewController.m */,
+				EAF601CA1E74409000D4A85F /* PLBoardViewController.xib */,
+			);
+			name = board;
+			sourceTree = "<group>";
+		};
+		EAF601D01E74414900D4A85F /* Plane */ = {
+			isa = PBXGroup;
+			children = (
+				EAF601DA1E74488E00D4A85F /* PLPlane.h */,
+				EAF601DB1E74488E00D4A85F /* PLPlane.m */,
+			);
+			name = Plane;
+			sourceTree = "<group>";
+		};
+		EAF601D61E7444AB00D4A85F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				EAF601D71E74478500D4A85F /* PLConfig.h */,
+				EAF601D81E74478500D4A85F /* PLConfig.m */,
+				EAF601E71E7458B500D4A85F /* PLEnum.h */,
+				EAF601E81E7458B500D4A85F /* PLEnum.m */,
+				EAF601EE1E745E3B00D4A85F /* PLMissileManager.h */,
+				EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		EAF601DD1E744A8700D4A85F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EADC70AB1E743DBD00A5A318 /* missile */,
+				EAF601D01E74414900D4A85F /* Plane */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EAF601DE1E744A9E00D4A85F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAF601CD1E74414300D4A85F /* PlaneView.h */,
+				EAF601CE1E74414300D4A85F /* PlaneView.m */,
+				EAF601D41E74444A00D4A85F /* PlaneView.xib */,
+				EAF601DF1E7455DD00D4A85F /* PLMissileView.h */,
+				EAF601E01E7455DD00D4A85F /* PLMissileView.m */,
+				EAF601E21E74566900D4A85F /* PLMissileColumnView.h */,
+				EAF601E31E74566900D4A85F /* PLMissileColumnView.m */,
+				EAF601E51E74568E00D4A85F /* PLMissileColumnView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF601D51E74444A00D4A85F /* PlaneView.xib in Resources */,
 				EADC70961E743C2900A5A318 /* LaunchScreen.storyboard in Resources */,
+				EAF601CC1E74409000D4A85F /* PLBoardViewController.xib in Resources */,
+				EAF601E61E74568E00D4A85F /* PLMissileColumnView.xib in Resources */,
 				EADC70931E743C2900A5A318 /* Assets.xcassets in Resources */,
 				EADC70911E743C2900A5A318 /* Main.storyboard in Resources */,
 			);
@@ -221,7 +325,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADC708E1E743C2900A5A318 /* ViewController.m in Sources */,
+				EAF601DC1E74488E00D4A85F /* PLPlane.m in Sources */,
+				EAF601E41E74566900D4A85F /* PLMissileColumnView.m in Sources */,
+				EAF601E11E7455DD00D4A85F /* PLMissileView.m in Sources */,
+				EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */,
+				EAF601D91E74478500D4A85F /* PLConfig.m in Sources */,
+				EAF601D31E74419D00D4A85F /* PLBaconMissile.m in Sources */,
+				EAF601EC1E745D2400D4A85F /* PLDavincciMissile.m in Sources */,
+				EADC708E1E743C2900A5A318 /* PLGameViewController.m in Sources */,
+				EAF601CB1E74409000D4A85F /* PLBoardViewController.m in Sources */,
+				EAF601CF1E74414300D4A85F /* PlaneView.m in Sources */,
+				EAF601E91E7458B500D4A85F /* PLEnum.m in Sources */,
 				EADC708B1E743C2900A5A318 /* AppDelegate.m in Sources */,
 				EADC70881E743C2900A5A318 /* main.m in Sources */,
 			);
@@ -420,6 +534,7 @@
 				EADC70A71E743C2A00A5A318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EADC70A81E743C2A00A5A318 /* Build configuration list for PBXNativeTarget "PlaneTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +543,7 @@
 				EADC70AA1E743C2A00A5A318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
