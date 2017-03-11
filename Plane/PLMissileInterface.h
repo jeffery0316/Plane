@@ -11,6 +11,7 @@
 @protocol PLMissileInterface <NSObject>
 - (NSInteger)powerCost;
 - (NSString *)missileName;
+- (NSInteger)speed;
 @end
 
 

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PLMissileInterface.h"
 
-@interface PLNewtonMissile : NSObject
+@interface PLNewtonMissile : NSObject <PLMissileInterface>
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PLMissileInterface.h"
 
-@interface PLBaconMissile : NSObject
-@property (assign, nonatomic) NSInteger speed;
+@interface PLBaconMissile : NSObject <PLMissileInterface>
 @end

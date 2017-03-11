@@ -9,5 +9,17 @@
 #import "PLNewtonMissile.h"
 
 @implementation PLNewtonMissile
+- (NSInteger)powerCost
+{
+    return 3;
+}
 
+- (NSString *)missileName
+{
+    return @"Newton";
+}
+
+- (NSInteger)speed {
+    return 90.f;
+}
 @end

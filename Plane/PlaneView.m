@@ -24,7 +24,7 @@ static CGFloat const planeHeight = 100;
 
 - (instancetype)initWithPlane:(PLPlane *)plane position:(CGPoint)position {
     self.posX = position.x - planeWidth / 2;
-    self.posY = position.y - planeHeight - 80;
+    self.posY = position.y - planeHeight - 100;
     CGRect frame = CGRectMake(self.posX, self.posY, planeWidth, planeHeight);
     
     if(self = [super initWithFrame:frame]){

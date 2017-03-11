@@ -10,4 +10,18 @@
 
 @implementation PLBaconMissile
 
+- (NSInteger)powerCost
+{
+    return 2;
+}
+
+- (NSString *)missileName
+{
+    return @"Bacon";
+}
+
+- (NSInteger)speed {
+    return 75.f;
+}
+
 @end

@@ -27,6 +27,7 @@
 		EAF601E91E7458B500D4A85F /* PLEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601E81E7458B500D4A85F /* PLEnum.m */; };
 		EAF601EC1E745D2400D4A85F /* PLDavincciMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EB1E745D2400D4A85F /* PLDavincciMissile.m */; };
 		EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */; };
+		EAF601F31E746B0C00D4A85F /* PLNewtonMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		EAF601ED1E745D5C00D4A85F /* PLMissileInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLMissileInterface.h; sourceTree = "<group>"; };
 		EAF601EE1E745E3B00D4A85F /* PLMissileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMissileManager.h; sourceTree = "<group>"; };
 		EAF601EF1E745E3B00D4A85F /* PLMissileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMissileManager.m; sourceTree = "<group>"; };
+		EAF601F11E746B0C00D4A85F /* PLNewtonMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLNewtonMissile.h; sourceTree = "<group>"; };
+		EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLNewtonMissile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +159,12 @@
 			isa = PBXGroup;
 			children = (
 				EAF601ED1E745D5C00D4A85F /* PLMissileInterface.h */,
-				EAF601D11E74419D00D4A85F /* PLBaconMissile.h */,
-				EAF601D21E74419D00D4A85F /* PLBaconMissile.m */,
 				EAF601EA1E745D2400D4A85F /* PLDavincciMissile.h */,
 				EAF601EB1E745D2400D4A85F /* PLDavincciMissile.m */,
+				EAF601D11E74419D00D4A85F /* PLBaconMissile.h */,
+				EAF601D21E74419D00D4A85F /* PLBaconMissile.m */,
+				EAF601F11E746B0C00D4A85F /* PLNewtonMissile.h */,
+				EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */,
 			);
 			name = missile;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				EAF601DC1E74488E00D4A85F /* PLPlane.m in Sources */,
 				EAF601E41E74566900D4A85F /* PLMissileColumnView.m in Sources */,
 				EAF601E11E7455DD00D4A85F /* PLMissileView.m in Sources */,
+				EAF601F31E746B0C00D4A85F /* PLNewtonMissile.m in Sources */,
 				EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */,
 				EAF601D91E74478500D4A85F /* PLConfig.m in Sources */,
 				EAF601D31E74419D00D4A85F /* PLBaconMissile.m in Sources */,

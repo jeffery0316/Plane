@@ -10,4 +10,18 @@
 
 @implementation PLDavincciMissile
 
+- (NSInteger)powerCost
+{
+    return 1;
+}
+
+- (NSString *)missileName
+{
+    return @"Davincci";
+}
+
+- (NSInteger)speed {
+    return 40.f;
+}
+
 @end
