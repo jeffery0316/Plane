@@ -17,6 +17,7 @@ static CGFloat const kMissileHeight = 40;
 @interface PLMissileView () <CAAnimationDelegate>
 @property (strong, nonatomic) CABasicAnimation *animation;
 @property (strong, nonatomic) UIImageView *missileImageView;
+@property (strong, nonatomic) id <PLMissileInterface> missile;
 @end
 
 @implementation PLMissileView
@@ -39,8 +40,8 @@ static CGFloat const kMissileHeight = 40;
 
     // animation
     self.animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    self.animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.frame.origin.x, 20)];
-    self.animation.duration = 5.0f;
+    self.animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.frame.origin.x, -20)];
+    self.animation.duration = self.missile.speed;
     self.animation.delegate = self;
     self.animation.repeatCount = 0;
     self.animation.removedOnCompletion = NO;
@@ -51,6 +52,7 @@ static CGFloat const kMissileHeight = 40;
 
 - (void)configureWithMissile:(id <PLMissileInterface>)missile
 {
+    self.missile = missile;
     CGRect frame = CGRectMake([PLConfig sharedConfig].plane.position.x, [PLConfig sharedConfig].plane.position.y, kMissileWidth, kMissileHeight);
     self.frame = frame;
     NSString *imageName = [PLEnum PLMissileFileTypeToStringWithMissileType:missile.type];
@@ -61,11 +63,7 @@ static CGFloat const kMissileHeight = 40;
 - (void)animationDidStop:(CAAnimation *)anim
                 finished:(BOOL)flag
 {
-//    CALayer *lay = [self valueForKey:kAnimationRemoveLayerKey];
-//    if(lay){
-//        [lay removeAllAnimations];
-//        [lay removeFromSuperlayer];
-//    }
+    // remove missile
 }
 
 @end

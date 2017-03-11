@@ -35,7 +35,7 @@
 }
 
 - (NSInteger)speed {
-    return 40.f;
+    return 0.5f;
 }
 
 - (PLMissileType)type

@@ -67,12 +67,12 @@
     NSArray *missiles = @[@(PLMissileTypeDavincci), @(PLMissileTypeBacon), @(PLMissileTypeNewton)];
 
     for (NSInteger idx = missiles.count - 1; idx >= 0; idx --) {
-        CGPoint position = CGPointMake([UIScreen mainScreen].bounds.size.width - posX, 0);
+        CGPoint position = CGPointMake([UIScreen mainScreen].bounds.size.width - posX, 40);
         PLMissileType type = [missiles[idx] integerValue];
         PLMissileColumnView *columnView = [[PLMissileColumnView alloc] init];
         [columnView configureWithMissileType:type position:position];
         [columnView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectMissileAction:)]];
-        columnView.tag = idx;
+        columnView.tag = type;
         [self.view addSubview:columnView];
         posX = posX + 55;
     }
@@ -113,15 +113,15 @@
     // TODO: refactor
     // change missile
     switch (gesture.view.tag) {
-        case 1: {
+        case PLMissileTypeDavincci: {
             [PLConfig sharedConfig].plane.missile = [[PLDavincciMissile alloc] init];
             break;
         }
-        case 2: {
+        case PLMissileTypeBacon: {
             [PLConfig sharedConfig].plane.missile = [[PLBaconMissile alloc] init];
             break;
         }
-        case 3: {
+        case PLMissileTypeNewton: {
             [PLConfig sharedConfig].plane.missile = [[PLNewtonMissile alloc] init];
             break;
         }
