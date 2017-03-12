@@ -34,8 +34,7 @@ NSString * const PLScoreChangedNotification = @"kPLScoreChangedNotification";
     };
 }
 
-+ (NSValueTransformer *)planeJSONTransformer
-{
++ (NSValueTransformer *)planeJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[PLPlane class]];
 }
 

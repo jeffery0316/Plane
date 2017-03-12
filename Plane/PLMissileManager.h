@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PLEnum.h"
+#import "PLMissileInterface.h"
 
 @interface PLMissileManager : NSObject
-
++ (id<PLMissileInterface>)missileFromMissileType:(PLMissileType)type;
 @end

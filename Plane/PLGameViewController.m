@@ -24,7 +24,7 @@
 // setting
 #import "PLConfig.h"
 
-@interface PLGameViewController () <PlanViewDelegate, PLFireButtonDelegate>
+@interface PLGameViewController () <PlanViewDelegate, PLFireButtonDelegate, PLMissileColumnButtonDelegate>
 @property (weak, nonatomic) IBOutlet UIView *prepareView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) UIButton *fireButton;
@@ -69,8 +69,7 @@
         PLMissileType type = [missiles[idx] integerValue];
         PLMissileColumnButton *columnButton = [[PLMissileColumnButton alloc] init];
         [columnButton configureWithMissileType:type position:position];
-        [columnButton addTarget:self action:@selector(selectMissileAction:) forControlEvents:UIControlEventTouchUpInside];
-        columnButton.tag = type;
+        columnButton.delegate = self;
         [self.view addSubview:columnButton];
         posX = posX + 55;
     }
@@ -91,8 +90,7 @@
 }
 
 #pragma mark - Action methods
-- (void)startAction:(UIButton *)button
-{
+- (void)startAction:(UIButton *)button {
     // clear map
     self.prepareView.hidden = YES;
 
@@ -100,30 +98,7 @@
     [self startGame];
 }
 
-- (void)selectMissileAction:(UIButton *)button
-{
-    // TODO: refactor and abstract this part as a PLMissileManager
-    // change missile
-    switch (button.tag) {
-        case PLMissileTypeDavincci: {
-            [PLConfig sharedConfig].plane.missile = [[PLDavincciMissile alloc] init];
-            break;
-        }
-        case PLMissileTypeBacon: {
-            [PLConfig sharedConfig].plane.missile = [[PLBaconMissile alloc] init];
-            break;
-        }
-        case PLMissileTypeNewton: {
-            [PLConfig sharedConfig].plane.missile = [[PLNewtonMissile alloc] init];
-            break;
-        }
-        default:
-            break;
-    }
-}
-
-- (void)fireAction
-{
+- (void)fireAction {
     // cost the power
     if (([PLConfig sharedConfig].score - [PLConfig sharedConfig].plane.missile.powerCost) < 0) {
         return;
@@ -141,15 +116,18 @@
 }
 
 #pragma mark - PlanViewDelegate methods
-- (void)planeView:(PlaneView *)plaveView didUpdatePosition:(CGPoint)position
-{
+- (void)planeView:(PlaneView *)plaveView didUpdatePosition:(CGPoint)position {
     [PLConfig sharedConfig].plane.position = position;
 }
 
 #pragma mark - PLFireButtonDelegate methods
-- (void)fireButtonDidFireMissile:(PLFireButton *)fire
-{
+- (void)fireButtonDidFireMissile:(PLFireButton *)fire {
     [self fireAction];
+}
+
+#pragma mark - PLMissileColumnButtonDelegate methods
+- (void)missileColumnButton:(PLMissileColumnButton *)missileColumnView didSelectMissileType:(PLMissileType)missileType {
+    [PLConfig sharedConfig].plane.missile = [PLMissileManager missileFromMissileType:missileType];
 }
 
 @end

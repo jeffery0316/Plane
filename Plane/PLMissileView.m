@@ -50,8 +50,7 @@ static CGFloat const kMissileHeight = 40;
     [self.layer addAnimation:self.animation forKey:@"launch"];
 }
 
-- (void)configureWithMissile:(id <PLMissileInterface>)missile
-{
+- (void)configureWithMissile:(id <PLMissileInterface>)missile {
     self.missile = missile;
     CGRect frame = CGRectMake([PLConfig sharedConfig].plane.position.x, [PLConfig sharedConfig].plane.position.y, kMissileWidth, kMissileHeight);
     self.frame = frame;
@@ -61,8 +60,7 @@ static CGFloat const kMissileHeight = 40;
 }
 
 - (void)animationDidStop:(CAAnimation *)anim
-                finished:(BOOL)flag
-{
+                finished:(BOOL)flag {
     // remove missile
 }
 

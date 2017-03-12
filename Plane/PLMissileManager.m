@@ -10,4 +10,23 @@
 
 @implementation PLMissileManager
 
++ (id<PLMissileInterface>)missileFromMissileType:(PLMissileType)type {
+    NSString *className = [self classNameFromMissileType:type];
+    if(className.length == 0){
+        return nil;
+    }
+
+    id <PLMissileInterface> class = [[NSClassFromString(className) alloc] init];
+
+    return class;
+}
+
++ (NSString *)classNameFromMissileType:(PLMissileType)type {
+    switch (type) {
+        case PLMissileTypeDavincci: return @"PLDavincciMissile";
+        case PLMissileTypeBacon: return @"PLBaconMissile";
+        case PLMissileTypeNewton: return @"PLNewtonMissile";
+    }
+}
+
 @end

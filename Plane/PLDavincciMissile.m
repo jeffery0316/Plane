@@ -10,8 +10,7 @@
 
 @implementation PLDavincciMissile
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
         self.type = PLMissileTypeDavincci;
     }
@@ -19,18 +18,15 @@
     return self;
 }
 
-- (NSInteger)powerCost
-{
+- (NSInteger)powerCost {
     return 1;
 }
 
-- (NSString *)missileName
-{
+- (NSString *)missileName {
     return @"Davincci";
 }
 
-- (NSString *)imageName
-{
+- (NSString *)imageName {
     return @"missile1";
 }
 
@@ -38,8 +34,7 @@
     return 0.5f;
 }
 
-- (PLMissileType)type
-{
+- (PLMissileType)type {
     return _type;
 }
 

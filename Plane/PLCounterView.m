@@ -45,8 +45,7 @@
     return self;
 }
 
-- (void)scoreChangedAction:(id)action
-{
+- (void)scoreChangedAction:(id)action {
     self.counterLabel.text = [NSString stringWithFormat:@"%ld", (long)[PLConfig sharedConfig].score];
 }
 

@@ -10,8 +10,7 @@
 
 @implementation PLBaconMissile
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
         self.type = PLMissileTypeBacon;
     }
@@ -20,18 +19,15 @@
 }
 
 
-- (NSInteger)powerCost
-{
+- (NSInteger)powerCost {
     return 2;
 }
 
-- (NSString *)missileName
-{
+- (NSString *)missileName {
     return @"Bacon";
 }
 
-- (NSString *)imageName
-{
+- (NSString *)imageName {
     return @"missile2";
 }
 
@@ -39,8 +35,7 @@
     return 1.f;
 }
 
-- (PLMissileType)type
-{
+- (PLMissileType)type {
     return _type;
 }
 
