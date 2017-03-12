@@ -12,6 +12,7 @@
 
 // view
 #import "PlaneView.h"
+#import "PLCounterView.h"
 #import "PLMissileView.h"
 #import "PLMissileColumnButton.h"
 
@@ -26,14 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIView *prepareView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) UIButton *fireButton;
-@property (strong, nonatomic) UILabel *counter;
 @end
 
 @implementation PLGameViewController
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,25 +45,23 @@
 #pragma mark - Setup methods
 - (void)_setupGame {
     [self.startButton addTarget:self action:@selector(startAction:) forControlEvents:UIControlEventTouchUpInside];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scoreChangedAction:) name:PLScoreChangedNotification object:nil];
-//    [PLConfig sharedConfig] observeValueForKeyPath:@"" ofObject:<#(nullable id)#> change:<#(nullable NSDictionary<NSKeyValueChangeKey,id> *)#> context:<#(nullable void *)#>
 }
 
-- (void)initGame {
+- (void)startGame {
     [self initMap];
     [self initPlane];
 }
 
 - (void)initMap {
 
-    // add fire view
+    // fire view
     CGRect fireButtonFrame = CGRectMake([UIScreen mainScreen].bounds.size.width / 2 - 45, [UIScreen mainScreen].bounds.size.height - 100, 90, 90);
     self.fireButton = [[UIButton alloc] initWithFrame:fireButtonFrame];
     [self.fireButton setImage:[UIImage imageNamed:@"fire"] forState:UIControlStateNormal];
     [self.view addSubview:self.fireButton];
     [self.fireButton addTarget:self action:@selector(fireAction:) forControlEvents:UIControlEventTouchUpInside];
 
-    // add missile board view
+    // missile board view
     CGFloat posX = 55;
     NSArray *missiles = @[@(PLMissileTypeDavincci), @(PLMissileTypeBacon), @(PLMissileTypeNewton)];
 
@@ -82,20 +76,9 @@
         posX = posX + 55;
     }
 
-    // add bullet count view
-    CGRect boardFrame = CGRectMake(20, 40, 120, 40);
-    UILabel *bulletLabel = [[UILabel alloc] initWithFrame:boardFrame];
-    bulletLabel.textColor = [UIColor whiteColor];
-    bulletLabel.text = @"Bullet Count";
-    [self.view addSubview:bulletLabel];
-
-    // counter
-    CGRect counterFrame = CGRectMake(20, 70, 80, 40);
-    self.counter = [[UILabel alloc] initWithFrame:counterFrame];
-    self.counter.text = [NSString stringWithFormat:@"%ld", (long)[PLConfig sharedConfig].score];
-    self.counter.textColor = [UIColor whiteColor];
-    self.counter.font = [UIFont fontWithName:@"System" size:20.f];
-    [self.view addSubview:self.counter];
+    // counter view
+    PLCounterView *counter = [[PLCounterView alloc] init];
+    [self.view addSubview:counter];
 }
 
 - (void)initPlane {
@@ -114,11 +97,8 @@
     // clear map
     self.prepareView.hidden = YES;
 
-    // status: entering game
-//    [PLConfig sharedConfig].gameStatus = PLGameStatusInGame;
-
     // init game
-    [self initGame];
+    [self startGame];
 }
 
 - (void)selectMissileAction:(UIButton *)button
@@ -159,11 +139,6 @@
     [missileView configureWithMissile:missile];
     [self.view addSubview:missileView];
     [missileView addAnimation];
-}
-
-- (void)scoreChangedAction:(id)action
-{
-    self.counter.text = [NSString stringWithFormat:@"%ld", (long)[PLConfig sharedConfig].score];
 }
 
 #pragma mark - PlanViewDelegate methods

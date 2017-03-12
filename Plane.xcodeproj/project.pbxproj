@@ -30,6 +30,8 @@
 		EAF601F31E746B0C00D4A85F /* PLNewtonMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */; };
 		EAF601F61E7471C300D4A85F /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF601F51E7471C300D4A85F /* Mantle.framework */; };
 		EAF601F81E7482CC00D4A85F /* PLMissileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF601F71E7482CC00D4A85F /* PLMissileView.xib */; };
+		EAF601FB1E74EEE100D4A85F /* PLCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601FA1E74EEE100D4A85F /* PLCounterView.m */; };
+		EAF601FE1E74F1A800D4A85F /* PLFireButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF601FD1E74F1A800D4A85F /* PLFireButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		EAF601F21E746B0C00D4A85F /* PLNewtonMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLNewtonMissile.m; sourceTree = "<group>"; };
 		EAF601F51E7471C300D4A85F /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
 		EAF601F71E7482CC00D4A85F /* PLMissileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMissileView.xib; sourceTree = "<group>"; };
+		EAF601F91E74EEE100D4A85F /* PLCounterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCounterView.h; sourceTree = "<group>"; };
+		EAF601FA1E74EEE100D4A85F /* PLCounterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCounterView.m; sourceTree = "<group>"; };
+		EAF601FC1E74F1A800D4A85F /* PLFireButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLFireButton.h; sourceTree = "<group>"; };
+		EAF601FD1E74F1A800D4A85F /* PLFireButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLFireButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +234,10 @@
 				EAF601E21E74566900D4A85F /* PLMissileColumnButton.h */,
 				EAF601E31E74566900D4A85F /* PLMissileColumnButton.m */,
 				EAF601E51E74568E00D4A85F /* PLMissileColumnButton.xib */,
+				EAF601F91E74EEE100D4A85F /* PLCounterView.h */,
+				EAF601FA1E74EEE100D4A85F /* PLCounterView.m */,
+				EAF601FC1E74F1A800D4A85F /* PLFireButton.h */,
+				EAF601FD1E74F1A800D4A85F /* PLFireButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -354,6 +364,8 @@
 				EAF601F01E745E3B00D4A85F /* PLMissileManager.m in Sources */,
 				EAF601D91E74478500D4A85F /* PLConfig.m in Sources */,
 				EAF601D31E74419D00D4A85F /* PLBaconMissile.m in Sources */,
+				EAF601FE1E74F1A800D4A85F /* PLFireButton.m in Sources */,
+				EAF601FB1E74EEE100D4A85F /* PLCounterView.m in Sources */,
 				EAF601EC1E745D2400D4A85F /* PLDavincciMissile.m in Sources */,
 				EADC708E1E743C2900A5A318 /* PLGameViewController.m in Sources */,
 				EAF601CB1E74409000D4A85F /* PLBoardViewController.m in Sources */,
