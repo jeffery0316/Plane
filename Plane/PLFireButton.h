@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PLFireButton : UIButton
+@class PLFireButton;
+@protocol PLFireButtonDelegate <NSObject>
+- (void)fireButtonDidFireMissile:(PLFireButton *)fireButton;
+@end
 
+@interface PLFireButton : UIButton
+@property (weak, nonatomic) id <PLFireButtonDelegate> delegate;
 @end

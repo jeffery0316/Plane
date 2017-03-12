@@ -12,6 +12,7 @@
 
 // view
 #import "PlaneView.h"
+#import "PLFireButton.h"
 #import "PLCounterView.h"
 #import "PLMissileView.h"
 #import "PLMissileColumnButton.h"
@@ -23,7 +24,7 @@
 // setting
 #import "PLConfig.h"
 
-@interface PLGameViewController () <PlanViewDelegate>
+@interface PLGameViewController () <PlanViewDelegate, PLFireButtonDelegate>
 @property (weak, nonatomic) IBOutlet UIView *prepareView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) UIButton *fireButton;
@@ -55,11 +56,9 @@
 - (void)initMap {
 
     // fire view
-    CGRect fireButtonFrame = CGRectMake([UIScreen mainScreen].bounds.size.width / 2 - 45, [UIScreen mainScreen].bounds.size.height - 100, 90, 90);
-    self.fireButton = [[UIButton alloc] initWithFrame:fireButtonFrame];
-    [self.fireButton setImage:[UIImage imageNamed:@"fire"] forState:UIControlStateNormal];
-    [self.view addSubview:self.fireButton];
-    [self.fireButton addTarget:self action:@selector(fireAction:) forControlEvents:UIControlEventTouchUpInside];
+    PLFireButton *fireButton = [[PLFireButton alloc] init];
+    fireButton.delegate = self;
+    [self.view addSubview:fireButton];
 
     // missile board view
     CGFloat posX = 55;
@@ -123,7 +122,7 @@
     }
 }
 
-- (void)fireAction:(UIButton *)button
+- (void)fireAction
 {
     // cost the power
     if (([PLConfig sharedConfig].score - [PLConfig sharedConfig].plane.missile.powerCost) < 0) {
@@ -145,6 +144,12 @@
 - (void)planeView:(PlaneView *)plaveView didUpdatePosition:(CGPoint)position
 {
     [PLConfig sharedConfig].plane.position = position;
+}
+
+#pragma mark - PLFireButtonDelegate methods
+- (void)fireButtonDidFireMissile:(PLFireButton *)fire
+{
+    [self fireAction];
 }
 
 @end
